@@ -1,0 +1,33 @@
+
+<div ng-controller="ThreadCtrl">
+
+    <div class="header">
+     RTFM
+    </div>
+    <!--<button ng-click="addThread">create thread</button>-->
+    <!--<div class="threads" ng-repeat="thread in threads"></div>-->
+
+        <div class="messages">
+            <div>
+                <textarea class="newThread" ng-model="newThread" ng-keydown="addThread($event)"></textarea>Create New Thread
+
+            </div>
+                    <hr>
+            <div ng-click="changeThread(id)" class="threads" ng-repeat="(id, thread) in threads">{{thread.body}}</div>
+
+
+            <input class="input" ng-model="newReply" ng-keydown="addReply($event)">reply</input>
+
+            <div class="replies">
+                <div>{{currentThread.body}}</div>
+                <div ng-repeat="(id, reply) in replies">{{reply}}</div>
+
+            </div>
+        <!--<button class="comment">reply</button>-->
+         </div>
+</div>
+
+
+
+
+
